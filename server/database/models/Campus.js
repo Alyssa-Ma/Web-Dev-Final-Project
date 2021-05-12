@@ -14,7 +14,7 @@ const Campus = db.define("campus", {
 
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'https://img.pngio.com/college-school-building-university-student-campus-png-download-college-campus-png-980_794.png'
+    defaultValue: 'https://i.imgur.com/63layDk.png'
   },
 
   address: {
