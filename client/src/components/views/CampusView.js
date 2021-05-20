@@ -1,4 +1,4 @@
-import "./CampusView.css";
+import "./css/CampusView.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
