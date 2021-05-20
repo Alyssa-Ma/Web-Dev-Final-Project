@@ -1,9 +1,11 @@
+import "./CampusView.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const CampusView = (props) => {
   
   const {campus} = props;
+  let hasStudents = campus.students.length > 0;
   //waiting for students array to be populated
   // if (campus.students === undefined){
   //   return <div>Loading...</div>
@@ -19,23 +21,21 @@ const CampusView = (props) => {
       <p>{campus.description}</p>
       <ul>
       
-      {campus.students.map( student => {
-        let name = student.firstname + " " + student.lastname;
-        if (!campus.students) {
-          console.log("no tsudents")
-          return <li>There are currently no students registered for this campus.</li>
-        }
-        else {
-          console.log("students")
-          return (
-            <div key={student.id}>
-              <Link to={`/student/${student.id}`}>
-                <h1>{name}</h1>
-              </Link>
-            </div>
-          );
-        }
-      })}
+      { 
+          (!hasStudents) ? <li>There are currently no students registered for this campus.</li>:(
+            campus.students.map( student => {
+              let name = student.firstname + " " + student.lastname;
+              console.log(campus.students)
+              console.log("students")
+              return (
+                <div key={student.id}>
+                  <Link to={`/student/${student.id}`}>
+                    <li>{name}</li>
+                  </Link>
+                </div>
+              );
+            }))
+      }
       </ul>
     </div>
   );
