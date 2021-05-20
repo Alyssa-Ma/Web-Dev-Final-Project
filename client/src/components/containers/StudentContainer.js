@@ -1,6 +1,8 @@
+import StudentView from "../views/StudentView";
+
 const StudentContainer = () => {
   return (
-    <h1>Single Student View</h1>
+    <StudentView/>
   );
 };
 
