@@ -6,3 +6,11 @@
 .App-link {
   color: #61dafb;
 }
+
+a:link{
+  color: white;
+}
+
+a:visited{
+  color: white;
+}

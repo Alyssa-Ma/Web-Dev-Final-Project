@@ -17,10 +17,7 @@ const AllStudentsView = (props) => {
                             <h1>{student.firstname}</h1>
                         </Link>
                         <img src={student.imageUrl} alt='student-pic' />
-                        <p>{student.email}</p>
-                        <p>{student.gpa}</p>
-
-
+                    
 
                     </div>
                 )
