@@ -28,7 +28,11 @@ const CampusView = (props) => {
         else {
           console.log("students")
           return (
-            <li key={student.id}>{name}</li>
+            <div key={student.id}>
+              <Link to={`/student/${student.id}`}>
+                <h1>{name}</h1>
+              </Link>
+            </div>
           );
         }
       })}
