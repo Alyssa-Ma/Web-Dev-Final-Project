@@ -14,7 +14,7 @@ const AllCampusesView = (props) => {
         console.log(props.allCampuses);
         return (
           <div className="campus-container">
-            <div className="row">
+            <div className="row text-center">
               <div key={campus.id} className="col-12">
 
                 <Link to={`/campus/${campus.id}`} className="campus-link">
@@ -24,11 +24,6 @@ const AllCampusesView = (props) => {
 
               <div className="col-12">
                 <img src={campus.imageUrl} alt='campus-pic' className="campus-pic" />
-              </div>
-
-              <div className="col-12">
-                <p>{campus.description}</p>
-                <p>{campus.address}</p>
               </div>
 
             </div>
