@@ -7,16 +7,19 @@ const StudentView = (props) => {
     let hasCampus = student.campus !== null;
 
     console.log(hasCampus);
-    console.log(student.campus);
+    //console.log(student.campus);
     return (
         <div>
             <h1>{student.firstname} {student.lastname}</h1>
             <img src={student.imageUrl} alt='student-pic' />
             {
                 (!hasCampus) ? <p>This student is not currently registered to any campus.</p>:(
+                
                 <Link to={`/campus/${student.campus.id}`}>
                     <p>{student.campus.name}</p>
                 </Link>
+                
+              
                 )
             }
             <p>{student.email}</p>
