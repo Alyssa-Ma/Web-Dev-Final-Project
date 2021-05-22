@@ -8,7 +8,8 @@ import {
   CampusContainer,
   StudentContainer,
   AllCampusesContainer,
-  AllStudentsContainer
+  AllStudentsContainer,
+  NewCampusFormContainer
 } from './components/containers';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -75,6 +76,7 @@ const App = () => {
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
+        <Route exact path="/form" component={NewCampusFormContainer} />
       </Switch>        
     </div>
   );
