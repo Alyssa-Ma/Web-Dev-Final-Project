@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 const HomePageView = () => {
   const classes = useStyles();
   return (
-      <div className={classes.greeting}><h1>Home Page</h1></div>
+      <div className={classes.greeting}><h1>Campus Manager</h1></div>
   
   );    
 }
