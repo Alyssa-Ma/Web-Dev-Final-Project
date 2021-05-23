@@ -7,10 +7,24 @@ import { ADD_CAMPUS } from "../../store/actions/actionTypes";
 const NewCampusFormView = () => {
 
     const [campusName, editCampusName] = useState("");
-    const [campusAddress, editCampusAddress] = useState('');
+    const [campusAddress, editCampusAddress] = useState("");
+    const [campusImageURL, editCampusImage] = useState("");
+    const [campusDescription, editCampusDescription] = useState("");
 
-    function onType (event) {
+    function campusNameInput (event) {
         editCampusName(event.target.value)
+    }
+
+    function campusAddressInput (event) {
+        editCampusAddress(event.target.value)
+    }
+
+    function campusImageInput (event) {
+        editCampusImage(event.target.value)
+    }
+
+    function campusDescriptionInput (event) {
+        editCampusDescription(event.target.value)
     }
 
     const addCampus = async () => {
@@ -23,6 +37,9 @@ const NewCampusFormView = () => {
         await axios
             .post('/api/campuses', {
                 name: campusName,
+                description: campusDescription,
+                imageUrl: campusImageURL,
+                address: campusAddress
 
             })
             .then((response) => {
@@ -39,11 +56,13 @@ const NewCampusFormView = () => {
         <div>
             <h1 style={{textAlign: 'center'}}>New Campus Form</h1>
             <form style={{marginTop: '20px'}}>
-                Campus Name: <input onChange={onType}></input><br/><br/>
-                Campus Address: <input></input>
+                Campus Name: <input onChange={campusNameInput}></input> <br/><br/>
+                Campus Address: <input onChange={campusAddressInput}></input> <br/><br/>
+                Campus ImageURL: <input onChange={campusImageInput}></input> <br/><br/>
+                Campus description: <input onChange={campusDescriptionInput}></input>
             </form>
 
-            <button onClick={addCampus}> button </button>
+            <button onClick={addCampus}> Add </button>
 
         </div>
     );

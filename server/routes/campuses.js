@@ -21,7 +21,7 @@ router.get('/:id', ash(async(req, res) => {
 
 router.post('/', async(req, res) => {
   try {
-    await Campus.create({name: req.body.name, address: "123 Hunter Ave"});
+    await Campus.create(req.body);
     return res.status(200).json("Success")
   } catch (error) {
     console.error(error)
