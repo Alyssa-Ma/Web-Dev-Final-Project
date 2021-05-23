@@ -9,7 +9,8 @@ import {
   StudentContainer,
   AllCampusesContainer,
   AllStudentsContainer,
-  NewCampusFormContainer
+  NewCampusFormContainer,
+  AddStudentContainer
 } from './components/containers';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -44,20 +45,32 @@ const NavBar = () => {
       <AppBar position="static" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Link to={'/'}  >
-          <Typography variant="h6" className={classes.title} color="inherit" >
-            CRUD App
-          </Typography>
+            <Typography variant="h6" className={classes.title} color="inherit" >
+              CRUD App
+            </Typography>
           </Link>
 
           <Link className={classes.links} to={'/campuses'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" color="primary" style={{marginLeft: '30px', marginRight: '10px'}}>
               All Campuses
             </Button>
           </Link>
 
-          <Link className={classes.links} to={'/students'} >
+          <Link to={'/addCampus'}>
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              Add Campus
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/students'} style={{marginRight: '10px'}}>
             <Button variant="contained" color="primary">
               All Students
+            </Button>
+          </Link>
+
+          <Link to={'/addStudent'}>
+            <Button variant="contained" color="primary">
+              Add Student
             </Button>
           </Link>
         </Toolbar>
@@ -76,7 +89,8 @@ const App = () => {
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
-        <Route exact path="/new" component={NewCampusFormContainer} />
+        <Route exact path="/addCampus" component={NewCampusFormContainer} />
+        <Route exact path="/addStudent" component={AddStudentContainer} />
       </Switch>        
     </div>
   );

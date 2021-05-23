@@ -1,11 +1,12 @@
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import {useState} from "react";
+import './css/NewCampusFormView.css'
 import axios from "axios";
 import { ADD_CAMPUS } from "../../store/actions/actionTypes";
 
-const NewCampusFormView = () => {
-
+const NewCampusFormView = () => { 
+  
     const [campusName, editCampusName] = useState("");
     const [campusAddress, editCampusAddress] = useState("");
     const [campusImageURL, editCampusImage] = useState("");
@@ -55,22 +56,23 @@ const NewCampusFormView = () => {
             });
             //window.location.replace("/campuses");
     }
-        
 
     return (
-        <div>
-            <h1 style={{textAlign: 'center'}}>New Campus Form</h1>
-            <form style={{marginTop: '20px'}}>
-                Campus Name: <input onChange={campusNameInput}></input> <br/><br/>
-                Campus Address: <input onChange={campusAddressInput}></input> <br/><br/>
-                Campus ImageURL: <input onChange={campusImageInput}></input> <br/><br/>
-                Campus description: <input onChange={campusDescriptionInput}></input>
-            </form>
-
-            <button onClick={addCampus}> Add </button>
-
-        </div>
+        <form>
+            <h1 className="title">Add Campus</h1>
+            <div className="fill">
+                Campus Name: <input></input>
+                Campus Address: <input></input>
+                Campus Description: <input></input>
+                Campus Image: <input></input>
+            </div>
+            <Link to={'/campuses'}>
+                <Button variant="contained" color="primary" style={{marginTop: '20px'}}>
+                    Add Campus
+                </Button>
+            </Link>
+        </form>
     );
-};
+}
 
 export default NewCampusFormView;
