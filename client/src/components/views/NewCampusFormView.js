@@ -34,6 +34,11 @@ const NewCampusFormView = () => {
             return 0;
         }
 
+        if (campusAddress == "" || campusAddress == null) {
+            alert("Please enter Campus Address");
+            return 0;
+        }
+
         await axios
             .post('/api/campuses', {
                 name: campusName,
