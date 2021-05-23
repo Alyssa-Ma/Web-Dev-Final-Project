@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 const CampusView = (props) => {
   
   const {campus} = props;
-  let hasStudents = campus.students.length > 0;
   //waiting for students array to be populated
-  // if (campus.students === undefined){
-  //   return <div>Loading...</div>
-  // }
+  if (campus.students === undefined){
+    return <div>Loading...</div>
+  }
   //no students
-
+  let hasStudents = campus.students.length > 0;
 
   return (
     <div>      
@@ -40,6 +39,10 @@ const CampusView = (props) => {
     </div>
   );
 
+};
+
+CampusView.propTypes = {
+  campus: PropTypes.array.isRequired,
 };
 
 export default CampusView;
