@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+    font-size: larger;
+    line-height: 200%;
+}
+
+h1 {
+    font-size: 75pt;
+}
+
+student-pic {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 5%;
+    margin-top: 5%
+}

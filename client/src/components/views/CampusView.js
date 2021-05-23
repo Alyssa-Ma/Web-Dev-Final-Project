@@ -5,22 +5,23 @@ import { Link } from "react-router-dom";
 const CampusView = (props) => {
   
   const {campus} = props;
-  let hasStudents = campus.students.length > 0;
   //waiting for students array to be populated
-  // if (campus.students === undefined){
-  //   return <div>Loading...</div>
-  // }
+  if (campus.students === undefined){
+    return <div>Loading...</div>
+  }
   //no students
-
+  let hasStudents = campus.students.length > 0;
 
   return (
     <div>      
       <h1>{campus.name}</h1>
-      <img src={campus.imageUrl} alt='campus-pic'/>
+      <img src={campus.imageUrl} alt='single-campus-pic' className="single-campus-pic"/>
+      <h2>Location</h2> 
       <p>{campus.address}</p>
+      <h2>Description</h2>
       <p>{campus.description}</p>
-      <ul>
       
+      <h2>Students</h2>
       { 
           (!hasStudents) ? <li>There are currently no students registered for this campus.</li>:(
             campus.students.map( student => {
@@ -36,10 +37,14 @@ const CampusView = (props) => {
               );
             }))
       }
-      </ul>
+      
     </div>
   );
 
+};
+
+CampusView.propTypes = {
+  campus: PropTypes.array.isRequired,
 };
 
 export default CampusView;
