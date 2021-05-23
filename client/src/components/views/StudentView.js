@@ -17,7 +17,8 @@ const StudentView = (props) => {
     return (
         <div>
             <h1>{student.firstname} {student.lastname}</h1>
-            <img src={student.imageUrl} alt='student-pic' />
+            <img src={student.imageUrl} alt='student-pic' className="student-pic"/>
+            <h2>Campus</h2>
             {
                 (!hasCampus) ? <p>This student is not currently registered to any campus.</p>:(
                 
@@ -26,7 +27,9 @@ const StudentView = (props) => {
                 </Link>
                 ) 
             }
+            <h2>Email</h2>
             <p>{student.email}</p>
+            <h2>GPA</h2>
             <p>{student.gpa}</p>
         </div>
     )
