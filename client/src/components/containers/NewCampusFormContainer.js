@@ -1,34 +1,10 @@
 import React, { Component } from "react";
-import NewCampusFormView from '../views/NewCampusFormView';
-import { connect } from "react-redux";
-import { addCampusThunk } from "../../store/thunks";
+import NewCampusFormView from "../views/NewCampusFormView";
 
-// const NewCampusFormContainer = () => {
-//     return (
-//         <NewCampusFormView />
-//     );
-// };
-
-class NewCampusFormContainer extends Component {
-    render() {
-        return(
-            <NewCampusFormView />
-        );
-    }
-}
-
-// Map state to props;
-const mapState = (state) => {
-    return {
-      allCampuses: state.allCampuses,
-    };
-};
-  
-// Map dispatch to props;
-const mapDispatch = (dispatch) => {
-    return {
-        addCampus: () => dispatch(addCampusThunk()),
-    };
+const NewCampusFormContainer = () => {
+    return(
+        <NewCampusFormView />
+    );
 };
 
-export default connect(mapState, mapDispatch)(NewCampusFormContainer);
+export default NewCampusFormContainer;

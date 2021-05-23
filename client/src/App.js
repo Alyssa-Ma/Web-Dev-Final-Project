@@ -56,7 +56,7 @@ const NavBar = () => {
             </Button>
           </Link>
 
-          <Link to={'/form'}>
+          <Link to={'/addCampus'}>
             <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
               Add Campus
             </Button>
@@ -89,7 +89,7 @@ const App = () => {
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
-        <Route exact path="/form" component={NewCampusFormContainer} />
+        <Route exact path="/addCampus" component={NewCampusFormContainer} />
         <Route exact path="/addStudent" component={AddStudentContainer} />
       </Switch>        
     </div>
