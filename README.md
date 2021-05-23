@@ -2,8 +2,18 @@
 
 Starter code for the backend of our final CRUD app
 
-To start:
+Download Postgres 
 
+To start backend:
+
+FIRST navigate to the 'server' directory
+
+run the following command:
 `npm run dev`
 
-Download Postgres and Postman. 
+To start front end:
+
+FIRST navigate to the 'client' directory 
+
+run the following command:
+`npm start`
