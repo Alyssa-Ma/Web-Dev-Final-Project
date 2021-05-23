@@ -29,12 +29,12 @@ const NewCampusFormView = () => {
 
     const addCampus = async () => {
         
-        if (campusName == "" || campusName == null) {
+        if (campusName === "" || campusName === null) {
             alert("Please enter Campus Name");
             return 0;
         }
 
-        if (campusAddress == "" || campusAddress == null) {
+        if (campusAddress === "" || campusAddress === null) {
             alert("Please enter Campus Address");
             return 0;
         }

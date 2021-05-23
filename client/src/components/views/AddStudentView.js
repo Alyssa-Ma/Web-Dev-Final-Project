@@ -56,10 +56,10 @@ class AddStudentView extends Component {
             <form>
                 <h1 className="title">Add New Student</h1>
                 <div className="fill">
-                    First Name: <input onChange={this.fnInput}></input>
-                    Last Name: <input onChange={this.lnInput}></input>
-                    Email: <input onChange={this.emailInput}></input>
-                    GPA: <input onChange={this.gpaInput}></input>
+                    <label for="fn">First Name:</label> <input onChange={this.fnInput} id="fn"></input> <br></br>
+                    <label for="ln">Last Name:</label> <input onChange={this.lnInput} id="ln"></input> <br></br>
+                    <label for="email">Email:</label> <input onChange={this.emailInput} id="email"></input> <br></br>
+                    <label for="gpa">GPA:</label> <input onChange={this.gpaInput} id="gpa"></input>
                 </div>
                 <Link to={'/students'}>
                     <Button onClick={()=>this.submit()} variant="contained" color="primary" style={{marginTop: '20px'}}>
