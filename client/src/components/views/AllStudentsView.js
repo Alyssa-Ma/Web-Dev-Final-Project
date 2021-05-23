@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./css/AllStudentView.css";
+import Button from '@material-ui/core/Button';
 
 const AllStudentsView = (props) => {
     if (!props.allStudents.length) {

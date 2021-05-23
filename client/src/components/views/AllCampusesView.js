@@ -10,11 +10,6 @@ const AllCampusesView = (props) => {
 
   return (
     <div>
-      <Link to={'/form'}>
-        <Button variant="contained" color="primary">
-          Add Campus
-        </Button>
-      </Link>
       {props.allCampuses.map((campus) => {
 
         console.log(props.allCampuses);
