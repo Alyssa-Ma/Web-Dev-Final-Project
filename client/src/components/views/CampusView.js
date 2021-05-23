@@ -15,7 +15,7 @@ const CampusView = (props) => {
   return (
     <div>      
       <h1>{campus.name}</h1>
-      <img src={campus.imageUrl} alt='campus-pic' className="campus-pic"/>
+      <img src={campus.imageUrl} alt='single-campus-pic' className="single-campus-pic"/>
       <h2>Location</h2> 
       <p>{campus.address}</p>
       <h2>Description</h2>
