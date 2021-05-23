@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import './css/NewCampusFormView.css'
 import axios from "axios";
-import { ADD_CAMPUS } from "../../store/actions/actionTypes";
 
 const NewCampusFormView = () => { 
   
@@ -61,13 +60,13 @@ const NewCampusFormView = () => {
         <form>
             <h1 className="title">Add Campus</h1>
             <div className="fill">
-                Campus Name: <input></input>
-                Campus Address: <input></input>
-                Campus Description: <input></input>
-                Campus Image: <input></input>
+                Campus Name: <input onChange={campusNameInput}></input> <br/><br/>
+                Campus Address: <input onChange={campusAddressInput}></input> <br/><br/>
+                Campus ImageURL: <input onChange={campusImageInput}></input> <br/><br/>
+                Campus description: <input onChange={campusDescriptionInput}></input>
             </div>
             <Link to={'/campuses'}>
-                <Button variant="contained" color="primary" style={{marginTop: '20px'}}>
+                <Button onClick={addCampus} variant="contained" color="primary" style={{marginTop: '20px'}}>
                     Add Campus
                 </Button>
             </Link>
